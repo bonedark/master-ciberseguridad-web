@@ -42,11 +42,13 @@ public class Application extends Controller {
     }
 
 
-    public static void removeStudent(String student) {
+      public static void removeStudent(String student) {
         checkTeacher();
-
+		if (checkTeacher()){
         User.remove(student);
         index();
+        else
+        render("Application/student.html", u);
     }
 
 
